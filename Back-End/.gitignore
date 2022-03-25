@@ -1,0 +1,7 @@
+
+!.gitignore
+/venv/
+.vscode
+/static/images
+*/__pycache__
+__pycache__

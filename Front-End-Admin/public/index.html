@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <!-- Icons -->
+  <link href="vendors/css/flag-icon.min.css" rel="stylesheet">
+  <link href="vendors/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendors/css/simple-line-icons.min.css" rel="stylesheet">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <!-- Main styles for this application -->
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .preloader {
+      display: none !important;
+    }
+
+    /* input,
+    input::-webkit-input-placeholder {
+      font-size: 12px;
+      line-height: 3;
+    } */
+    .login-box,
+    .register-box {
+      margin-top: 5% !important;
+    }
+
+    .invalid-feedback {
+      display: block;
+    }
+
+    #btn-login {
+      border-radius: 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      background: black;
+      border: 0px;
+    }
+
+    .card-header .card-actions a,
+    .card-header .card-actions button {
+      border-left: 0px solid #c2cfd6 !important;
+      font-size: 22px !important;
+    }
+    .app-header.navbar .navbar-brand {
+        background-image: none;
+        background-image: none;
+        padding-top: 14px;
+        font-weight: bold;
+        text-transform: uppercase; 
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+
+  <!-- Bootstrap and necessary plugins -->
+  <script src="vendors/js/jquery.min.js"></script>
+  <script src="vendors/js/popper.min.js"></script>
+  <script src="vendors/js/bootstrap.min.js"></script>
+  <!-- Summernote -->
+  <script src="plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- Select2 -->
+  <script src="plugins/select2/js/select2.full.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-display outline-none focus:outline-none;
+  }
+  input {
+    @apply focus:outline-none;
+  }
+  .input-primary {
+    @apply focus:ring-2 uppercase duration-100 rounded-md focus:ring-purple-500 p-2 m-2;
+  }
+}
