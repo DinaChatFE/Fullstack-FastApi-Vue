@@ -1,5 +1,4 @@
 from datetime import datetime
-from functools import cache
 import typing
 from fastapi import APIRouter
 from fastapi.exceptions import HTTPException
