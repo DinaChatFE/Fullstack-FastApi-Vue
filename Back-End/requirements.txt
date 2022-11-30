@@ -50,4 +50,4 @@ pony~=0.7.14
 pathlib
 # Install this to use with pony orm 
 # ~~ Fixed: 25 oct 2022
-psycopg2cffi
+# psycopg2cffi
