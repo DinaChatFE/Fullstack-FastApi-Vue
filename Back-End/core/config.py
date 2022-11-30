@@ -16,7 +16,7 @@ class Setting(BaseSettings):
     APP_NAME: str = config("APP_NAME")
     SERVER_NAME: str = config("SERVER_NAME")
     SERVER_HOST: str = config("SERVER_HOST")
-    SERVER_PORT: str = config("SERVER_PORT", default=8000)
+    SERVER_PORT: str = config("SERVER_PORT", default=8001)
     DEFAULT_PARAMS_USE = ['page', 'page_size', 'order', 'order_by', 'user']
 
     class Config:
