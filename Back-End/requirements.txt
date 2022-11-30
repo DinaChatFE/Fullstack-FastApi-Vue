@@ -21,7 +21,7 @@ Mako==1.1.5
 MarkupSafe==2.0.1
 orjson==3.6.4
 passlib==1.7.4
-psycopg2==2.9.1
+# psycopg2==2.9.1
 pycodestyle==2.8.0
 pycparser==2.21
 pydantic==1.8.2
@@ -50,4 +50,4 @@ pony~=0.7.14
 pathlib
 # Install this to use with pony orm 
 # ~~ Fixed: 25 oct 2022
-# psycopg2cffi
+psycopg2cffi
