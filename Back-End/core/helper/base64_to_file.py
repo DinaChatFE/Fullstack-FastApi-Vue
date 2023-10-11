@@ -16,7 +16,7 @@ class Base64ToFile:
         with open(f"{self.file_name}.png", 'wb') as file_to_save:
             decoded_image_data = base64.decodebytes(self.base64_img_bytes)
             file_to_save.write(decoded_image_data)
-            shutil.move(f"{self.file_name}.png", f'{config("SAVE_FILE_FROM_BASE64")}/{self.file_name}.png')
+            shutil.move(f"{self.file_name}.png", f'static/images/{self.file_name}.png')
             file_to_save.close()
 
     @property
