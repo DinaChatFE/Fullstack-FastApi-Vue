@@ -48,6 +48,7 @@ websockets==10.0
 yapf==0.31.0
 pony~=0.7.14
 pathlib
+python-decouple
 # Install this to use with pony orm 
 # ~~ Fixed: 25 oct 2022
-# psycopg2cffi
+psycopg2cffi

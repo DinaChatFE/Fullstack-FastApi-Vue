@@ -1,0 +1,43 @@
+version: '3.7'
+services:
+  frontend-client:
+    container_name: frontend-client
+    build:
+      context: ./Front-End-Client
+      dockerfile: dockerFile
+    networks:
+      - full-stack-project-ecc_center-network
+    tty: true
+    ports:
+      - 3002:3000
+
+  backend-python:
+    build:
+      context: ./Back-End
+      dockerfile: Dockerfile
+    working_dir: /code
+    volumes:
+      - ./Back-End:/code
+    networks:
+      - full-stack-project-ecc_center-network
+    ports:
+      - 8081:8000
+  postgres:
+    image: postgres
+    restart: always
+    ports: 
+      - 5432:5432
+    networks:
+      - full-stack-project-ecc_center-network
+    environment:
+      POSTGRES_USER: dina
+      POSTGRES_PASSWORD: dinachat123
+    volumes:
+      - pgdb:/var/lib/postgresql/data
+
+networks:
+  full-stack-project-ecc_center-network:
+    external:
+     name: full-stack-project-ecc_center-network
+volumes:
+  pgdb:
