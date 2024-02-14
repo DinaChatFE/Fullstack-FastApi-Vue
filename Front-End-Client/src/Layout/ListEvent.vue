@@ -52,7 +52,6 @@ import RecentPost from "../Layout/Patial/RecentPost.vue";
 import { FILTER_BY_CAT_NEWS, FILTER_BY_USER_NEWS, GET_ALL_NEW } from "../store/type";
 import { FILTER_NEWS_WITH_PAGE } from "../store/type";
 import router from "../router";
-// import PostListContentLoad from '../components/PostListContentLoad.vue';
 
 export default {
   components: { Author, Categories, RecentPost, Paginate, EventList },

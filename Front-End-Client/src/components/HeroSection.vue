@@ -1,7 +1,6 @@
 <template>
   <!-- hero section -->
-  <!-- <div class="container-sm mx-auto"> -->
-    <div class="lg:2/6 xl:max-w-7xl mt-20 mx-auto lg:mt-40 lg:ml-42 text-left  sm:px-12 lg:px-0 md:px-0">
+    <div class="lg:2/6 px-4 xl:max-w-7xl mt-20 mx-auto lg:mt-40 lg:ml-42 text-left">
       
       <div class="text-6xl font-semibold text-gray-900 leading-none">
         Bring together with modern world
@@ -68,9 +67,6 @@
       </bottom>
     </div>
     </div>
-    
-  <!-- </div> -->
-
   <!-- /hero section -->
 </template>
 

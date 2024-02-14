@@ -1,3 +1,4 @@
+
 export const AUTH_ACTION = '[actions] auth user';
 export const AUTO_LOGIN_ACTION = '[actions] auto login user';
 export const AUTO_LOGOUT_ACTION = '[actions] auto logout user';
@@ -12,4 +13,4 @@ export const DISABLE_SUBMIT_BUTTON = '[mutations] disable submit button';
 export const BREADCRUMB = '[mutations] breadcrumb';
 export const GET_USER_TOKEN_GETTER = '[getters] get user token';
 export const IS_USER_AUTHENTICATED_GETTER = '[getters] is user authenticated';
-export const BASE_URL = 'https://api-event.dinadev.pro/';
+export const BASE_URL = process.env.VUE_APP_API ?? 'https://api-event.dinadev.pro/';

@@ -1,7 +1,6 @@
 <template>
   <!-- This is an example component -->
-  <div
-    class="
+  <div class="
       bg-white
       shadow-md
       border border-gray-200
@@ -12,38 +11,29 @@
       transition
       duration-300
       overflow-hidden
-    "
-  >
-    <img
-      class="rounded-t-lg-2 h-40 w-full object-cover overflow-hidden z-0"
-      :src="event_thumbnail"
-      alt=""
-    />
+    ">
+    <img class="rounded-t-lg-2 h-40 w-full object-cover overflow-hidden z-0" :src="event_thumbnail" alt="" />
     <div class="p-5 items-start">
       <a href="#">
-        <h6
-          class="
+        <h6 class="
             text-left text-gray-900
             font-bold
             text-xl
             tracking-tight
             mb-2
             line-clamp-2
-          "
-        >
+          ">
           {{ event.title }}
         </h6>
       </a>
       <p class="text-left text-red-400 text-sm font-bold my-3 text-ellipsis">
         {{ event.start_date_format }}
       </p>
-      <p class="font-normal text-gray-700 mb-3 text-sm text-left line-clamp-3" v-html="event.description"></p>
       <p class="text-gray-500 text-left text-sm">{{ event.mode }}</p>
       <div class="my-3"></div>
       <div class="flex justify-between">
         <div @click="pushRoute">
-          <a
-            class="
+          <a class="
               text-white
               bg-blue-700
               hover:bg-blue-800
@@ -54,16 +44,11 @@
               px-3
               py-2
               inline-flex
-            "
-            href="#"
-          >
+            " href="#">
             Read more
           </a>
         </div>
-        <button
-          v-if="!is_interested_route"
-          @click="toggleInterested"
-          class="
+        <button v-if="!is_interested_route" @click="toggleInterested" class="
             rounded-2xl
             w-10
             h-8
@@ -71,22 +56,11 @@
             items-center
             justify-center
             bg-gray-100
-          "
-          :class="is_interested ? 'text-transparent' : ''"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            :fill="is_interested ? '#B0005C' : 'none'"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-            />
+          " :class="is_interested ? 'text-transparent' : ''">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" :fill="is_interested ? '#B0005C' : 'none'"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
           </svg>
         </button>
       </div>
@@ -130,8 +104,8 @@ export default {
     };
   },
   computed: {
-    is_interested_route: function(){
-        return route.currentRoute.value.query?.q == 'interested'
+    is_interested_route: function () {
+      return route.currentRoute.value.query?.q == 'interested'
     },
   },
   methods: {
@@ -153,5 +127,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

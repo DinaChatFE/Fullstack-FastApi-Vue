@@ -1,8 +1,7 @@
 <template>
   <main class="relative w-full mx-auto bg-white">
     <div class="relative -mx-4 top-0 pt-[17%] overflow-hidden">
-      <img
-        class="
+      <img class="
           absolute
           inset-0
           object-cover object-top
@@ -10,56 +9,34 @@
           h-full
           filter
           blur
-        "
-        :src="img_background"
-        alt=""
-      />
+        " :src="img_background" alt="" />
     </div>
 
-    <div class="mt-[-10%] w-1/2 mx-auto">
-      <div class="relative pt-[56.25%] overflow-hidden rounded-2xl">
-        <img
-          class="w-full h-full absolute inset-0 object-cover"
-          :src="img_background"
-          alt=""
-        />
+    <div class="mt-[-10%] mx-auto px-4" style="max-width: 850px">
+      <div class="relative pt-[56.25%] border overflow-hidden rounded-2xl">
+        <img class="w-full h-full absolute inset-0 object-cover" :src="img_background" alt="" />
       </div>
     </div>
     <article class="max-w-4xl px-6 mx-auto py-8">
       <div class="flex justify-between mt-9">
-        <div v-if="pathRoute == 'event'" class="profile">
-          <div class="flex justify-center px-5 -mt-12">
-            <img
-              class="h-32 w-32 bg-white p-2 rounded-full"
-              :src="
-                detail.created_by?.profile
-                  ? image_url
-                  : 'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png'
-              "
-              alt=""
-            />
+        <div v-if="pathRoute == 'event'" class="profile flex items-center">
+          <div class="flex justify-center bg-white border rounded-full overflow-hidden">
+            <img class="md:h-20 md:w-20 h-16 w-16" :src="detail.created_by?.profile
+              ? image_url
+              : 'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png'
+              " alt="" />
           </div>
-          <div class="">
-            <div class="text-center px-14">
-              <h2 class="text-gray-800 text-xl font-bold">
-                {{ detail.created_by?.full_name }}
-              </h2>
-              <p class="text-gray-400 mt-2">
-                @{{ detail.created_by?.full_name }}
-              </p>
-            </div>
+          <div class="px-2 text-left">
+            <h2 class="text-gray-800 my-0 text-xl font-bold">
+              {{ detail.created_by?.full_name }}
+            </h2>
+            <p class="text-gray-400 my-0">
+              @{{ detail.created_by?.full_name }}
+            </p>
           </div>
         </div>
-        <div
-          v-if="pathRoute == 'event'"
-          class="operation text-center flex-col justify-center align-middle"
-        >
-          <a
-            @click="registerEvent"
-            v-if="!register"
-            class="
-
-              cursor-pointer
+        <div v-if="pathRoute == 'event'" class="operation flex items-center justify-center align-middle">
+          <a @click="registerEvent" v-if="!register" class="cursor-pointer
               mr-4
               text-white
               bg-blue-700
@@ -71,17 +48,11 @@
               px-3
               py-2
               inline-flex
-            "
-          >
+            ">
             Register
           </a>
-          <button
-            v-if="pathRoute == 'event'"
-            @click="toggleInterested"
-            class="
-              ml-5
+          <button v-if="pathRoute == 'event'" @click="toggleInterested" class="
               text-center
-              mt-4
               rounded-2xl
               w-10
               self-center
@@ -90,22 +61,11 @@
               items-center
               justify-center
               bg-gray-100
-            "
-            :class="is_interested ? 'text-transparent' : ''"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              :fill="is_interested ? '#B0005C' : 'none'"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              />
+            " :class="is_interested ? 'text-transparent' : ''">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor"
+              :fill="is_interested ? '#B0005C' : 'none'">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </button>
         </div>
@@ -141,19 +101,12 @@
         </p>
         <p class="text-left text-gray-500">
           Category:
-          <span
-            class="bg-gray-500 text-white rounded-md px-2 py-1"
-            v-for="cat in detail.categories_props"
-            v-bind:key="cat.id"
-            >{{ cat.name }}</span
-          >
+          <span class="bg-gray-500 text-white rounded-md px-2 py-1" v-for="cat in detail.categories_props"
+            v-bind:key="cat.id">{{ cat.name }}</span>
         </p>
       </div>
 
-      <div
-        class="mt-6 text-left min-h-screen"
-        v-html="detail?.description"
-      ></div>
+      <div class="mt-6 text-left min-h-screen" v-html="detail?.description"></div>
     </article>
   </main>
 </template>
@@ -181,7 +134,7 @@ export default {
       is_loaded: computed(() => store.state.event.is_loaded),
       auth: computed(() => store.state.auth),
       getEventDetailPage(id) {
-        store.dispatch({ type: DETAIL_PAGE_EVENT, id }).then(() => {});
+        store.dispatch({ type: DETAIL_PAGE_EVENT, id }).then(() => { });
       },
       getNewsDetailPage(id) {
         store.dispatch({ type: DETAIL_PAGE_NEWS, id });
@@ -251,8 +204,8 @@ export default {
       }
     },
   },
-  created(){
-      
+  created() {
+
   },
   async mounted() {
     this.$nextTick(async () => {
@@ -260,7 +213,7 @@ export default {
         this.is_interested = route.currentRoute.value.params.props == "true";
       }
       this.route_id = route.currentRoute.value.params;
-      
+
       var path = this.route_id.path;
       var id = this.route_id.id;
       if (path == "news") {
@@ -281,8 +234,8 @@ export default {
     toggleInterested() {
       this.toggleEventInterested(this.detail.id);
     },
-    fetchCheckInStatus(event_id, user_id){
-      fetch(`http://127.0.0.1:8000/registration/${event_id}/${user_id}`).then(res=> res.json()).then(res => {
+    fetchCheckInStatus(event_id, user_id) {
+      fetch(`http://127.0.0.1:8000/registration/${event_id}/${user_id}`).then(res => res.json()).then(res => {
         this.register = res.check_in;
         console.log(res.check_in);
       })
@@ -303,7 +256,7 @@ export default {
           if (result.isConfirmed) {
             this.$swal.fire("Register has been send to owner!", "", "success");
             this.dispatchRegister(this.event_detail.id);
-            this.register  = true
+            this.register = true
           }
         });
     },
@@ -321,9 +274,11 @@ export default {
 .pt-\[17\%\] {
   padding-top: 17%;
 }
+
 .mt-\[-10\%\] {
   margin-top: -10%;
 }
+
 .pt-\[56\.25\%\] {
   padding-top: 56.25%;
 }
