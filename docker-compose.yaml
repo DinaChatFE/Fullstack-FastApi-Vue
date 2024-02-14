@@ -21,7 +21,8 @@ services:
     networks:
       - full-stack-project-ecc_center-network
     ports:
-      - 8081:8000
+      - 8082:8000
+
   postgres:
     image: postgres
     restart: always
@@ -37,7 +38,6 @@ services:
 
 networks:
   full-stack-project-ecc_center-network:
-    external:
-     name: full-stack-project-ecc_center-network
+    driver: bridge
 volumes:
   pgdb:
