@@ -21,7 +21,7 @@
       <div class="flex justify-between mt-9">
         <div v-if="pathRoute == 'event'" class="profile flex items-center">
           <div class="flex justify-center bg-white border rounded-full overflow-hidden">
-            <img class="md:h-20 md:w-20 h-16 w-16" :src="detail.created_by?.profile
+            <img class="md:h-16 md:w-16 h-12 w-12" :src="detail.created_by?.profile
               ? image_url
               : 'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png'
               " alt="" />
