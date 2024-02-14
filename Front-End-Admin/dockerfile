@@ -1,0 +1,23 @@
+# Use an official Node.js runtime as the base image
+FROM node:14
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+COPY . .
+
+RUN npm install
+# Install the `serve` package globally
+RUN npm install serve
+
+RUN npm run build
+# Copy the built Vue app for production to the container
+
+# Expose the port on which `serve` will listen (default is 5000)
+EXPOSE 3000
+
+# Start the `serve` command to serve the Vue app
+CMD ["npx", "serve", "-s", "dist"]

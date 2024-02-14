@@ -1,5 +1,17 @@
 version: '3.7'
 services:
+  frontend-admin:
+    container_name: frontend-admin
+    build:
+      context: ./Front-End-Admin
+      dockerfile: dockerfile
+    networks:
+      - full-stack-project-ecc_center-network
+    tty: true
+    environment:
+      VUE_APP_API: "backend-python:8000/"
+    ports:
+      - 3003:3000
   frontend-client:
     container_name: frontend-client
     build:
@@ -8,6 +20,8 @@ services:
     networks:
       - full-stack-project-ecc_center-network
     tty: true
+    environment:
+      VUE_APP_API: "backend-python:8000/"
     ports:
       - 3002:3000
 

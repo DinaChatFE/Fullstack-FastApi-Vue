@@ -9,7 +9,7 @@ from pony.orm import db_session
 from starlette.requests import Request
 from test_log import test_api
 from fastapi.middleware.cors import CORSMiddleware
-
+from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 
 def create_app():
     app = FastAPI(title='Event News project',
@@ -30,14 +30,6 @@ def create_app():
             session.__exit__(exc=exception)
 
     # Register CORS
-
-    app.include_router(router=api.auth_router)
-    app.include_router(router=api.event_router)
-    app.include_router(router=api.register_route)
-    app.include_router(router=api.news_router)
-    app.include_router(router=test_api.route)
-    app.include_router(router=api.category_route)
-
     origins = ['*']
 
     app.add_middleware(
@@ -47,6 +39,12 @@ def create_app():
         allow_methods=["*"],
         allow_headers=["*"],
     )
+    app.include_router(router=api.auth_router)
+    app.include_router(router=api.event_router)
+    app.include_router(router=api.register_route)
+    app.include_router(router=api.news_router)
+    app.include_router(router=test_api.route)
+    app.include_router(router=api.category_route)
 
     @app.get('/home')
     def home():
