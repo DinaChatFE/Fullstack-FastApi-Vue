@@ -11,8 +11,8 @@ The disadvantage of not using this project is that individuals will go to a cert
 - User could register there interested event
 
 ## Tools 
-* Fast API: FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
-* Vue: is a JavaScript framework used to create user interfaces. It is built on top of conventional HTML, CSS, and JavaScript and provides a declarative and component-based programming approach that allows you to rapidly construct basic or sophisticated user interfaces.
+- **Fast API**: FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
+- **Vue**: is a JavaScript framework used to create user interfaces. It is built on top of conventional HTML, CSS, and JavaScript and provides a declarative and component-based programming approach that allows you to rapidly construct basic or sophisticated user interfaces.
 
 ## Pre requirement
 
