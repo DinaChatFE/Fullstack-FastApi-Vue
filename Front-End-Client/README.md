@@ -1,4 +1,4 @@
-# product-vue3-vuex
+# Event News Vue Vuex
 
 ## Project setup
 ```

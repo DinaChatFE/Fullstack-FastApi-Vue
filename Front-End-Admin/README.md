@@ -1,4 +1,4 @@
-# vu-4
+# Dashboard Admin Event News
 
 ## Project setup
 ```
