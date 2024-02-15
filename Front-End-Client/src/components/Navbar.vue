@@ -20,7 +20,7 @@
             <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="openNav">
               <img src="@/assets/burger.svg" class="w-6 h-6" alt="burger icon"/>
             </button>
-            <router-link to="/" class="px-2">
+            <router-link to="/" class="px-4">
               <a href="#" class="text-xl font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline
                 ">Event News
               </a>

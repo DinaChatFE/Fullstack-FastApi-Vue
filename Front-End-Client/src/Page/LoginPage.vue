@@ -31,7 +31,7 @@
         <h1 class="text-xl md:text-2xl font-bold leading-tight mt-12">
           Log in to your account
         </h1>
-        <div class="flex absolute top-10 left-10 hover:underline cursor-pointer">
+        <div class="flex absolute top-10 hover:underline cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6"
@@ -44,7 +44,8 @@
               stroke-linejoin="round"
               stroke-width="2"
               d="M15 19l-7-7 7-7"
-            /></svg
+            />
+          </svg
           >
            <router-link to="/"><a>Home</a></router-link>
         </div>

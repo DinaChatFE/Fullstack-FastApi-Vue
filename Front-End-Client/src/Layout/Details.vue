@@ -84,23 +84,22 @@
 
       <ul class="text-left text-gray px-2">
         <li v-if="detail?.mode" class="text-gray-600">
-          Mode: <strong>{{ detail?.mode }}</strong>
+          Mode - <strong>{{ detail?.mode }}</strong>
         </li>
         <li v-if="detail?.start_date_format" class="text-gray-600">
-          Start date: <strong> {{ detail?.start_date_format }}</strong>
+          Start at - <strong> {{ detail?.start_date_format }}</strong>
         </li>
         <li v-if="detail?.end_date_format" class="text-gray-600">
-          Start date: <strong> {{ detail?.end_date_format }}</strong>
+          End at - <strong> {{ detail?.end_date_format }}</strong>
         </li>
       </ul>
 
       <hr class="my-6" />
       <div v-if="pathRoute == 'news'">
         <p class="text-left text-gray-500 py-2">
-          Upload at: {{ detail.created_at_format }}
+          Upload at - {{ detail.created_at_format }}
         </p>
         <p class="text-left text-gray-500">
-          Category:
           <span class="bg-gray-500 text-white rounded-md px-2 py-1" v-for="cat in detail.categories_props"
             v-bind:key="cat.id">{{ cat.name }}</span>
         </p>
