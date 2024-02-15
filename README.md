@@ -9,6 +9,10 @@ The disadvantage of not using this project is that individuals will go to a cert
 - Admin could manage whole system
 - Admin could see the report
 - User could register there interested event
+## Demo
+* Client site url: https://event.dinadev.pro
+* Admin Dashboard site: https://event-dashboard.dinadev.pro
+* Open Api Document: https://api-event.dinadev.pro/docs
 
 ## Tools 
 - **Fast API**: FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
