@@ -4,49 +4,11 @@
       <div class="modal-wrapper">
         <div class="modal-container relative">
           <div class="modal-header">
-            <button
-              class="
-                text-center
-                absolute
-                top-2
-                right-2
-                rounded-full
-                mr-2
-                modal-default-button
-                ml-5
-                bg-white
-                py-2
-                px-3
-                border border-gray-300
-                shadow-sm
-                text-sm
-                leading-4
-                font-medium
-                text-gray-700
-                hover:bg-gray-50
-                focus:outline-none
-                focus:ring-2
-                focus:ring-offset-2
-                focus:ring-indigo-500
-                w-10
-                h-10
-              "
-              ref=myBtn
-              @click="$emit('close')"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 pr-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+            <button class="text-center absolute top-2 right-2 rounded-full mr-2 modal-default-button ml-5 bg-white py-2 px-3 border border-gray-300 shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-10 h-10
+              " ref=myBtn @click="$emit('close')">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 pr-1" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
             <slot name="header"></slot>

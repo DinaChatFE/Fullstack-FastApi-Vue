@@ -51,6 +51,7 @@ export default {
         state.error_raise = ''
         state.is_loaded = true
       }, error => {
+        console.log(error)
         state.error_raise = error.response.data.detail
         state.is_loaded = true
       })

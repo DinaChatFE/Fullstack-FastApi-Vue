@@ -28,8 +28,8 @@ export default {
         console.log(query);
         axios.get(`${baseUrl}event?page=${page}&page_size=12${query}`, { headers: { Authorization: `Bearer ${token}` } }).then(response => cb(response)).catch(error => cbError(error))
     },
-    filterByEventInterested(token , page = 1, cb, cbError){
-        axios.get(`${baseUrl}event/by-interested?page=${page}&page_size=12&user=${token}`).then(res=> cb(res), error=> cbError(error))
+    filterByEventInterested(token, page = 1, cb, cbError) {
+        axios.get(`${baseUrl}event/by-interested?page=${page}&page_size=12&user=${token}`).then(res => cb(res), error => cbError(error))
     },
 
     postPreference(payload, token, cb, cbError) {
@@ -37,12 +37,12 @@ export default {
         axios.get(`${baseUrl}event/preference/${payload.id}?is_interested=${payload.is_interested}`, { headers: { Authorization: `Bearer ${token}` } }).then(res => cb(res)).catch(error => cbError(error))
     },
     getDetail(id, token, cb, cbError) {
-        if(!token){
+        if (!token) {
             token = ''
         }
         axios.get(`${baseUrl}event/${id}?token=${token}`, { headers: { Authorization: `Bearer ${token}` } }).then(res => cb(res), error => cbError(error))
     },
     registerEventApi(id, token, cb, cbError) {
-        axios.post(`${baseUrl}registration/${id}`, {} ,{ headers: { Authorization: `Bearer ${token}` } }).then(res=> cb(res), error => cbError(error))
+        axios.post(`${baseUrl}registration/${id}`, {}, { headers: { Authorization: `Bearer ${token}` } }).then(res => cb(res), error => cbError(error))
     }
 }

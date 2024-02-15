@@ -31,11 +31,11 @@
           <a href="#" class="flex items-center"
             ><img
               v-if="data.created_by?.profile"
-              :src="thumbnail"
+              :src="envStorage + this.data.created_by.profile"
               alt="avatar"
               class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
             />
-            <h1 class="font-bold text-gray-700 hover:underline"> {{data.created_by?.first_name}} </h1>
+            <h1 class="font-bold text-gray-700 hover:underline"> {{ data.created_by?.first_name }} </h1>
           </a>
         </div>
       </div>
@@ -45,9 +45,9 @@
 
 <script>
 export default {
-  data(){
-    return{
-      thumbnail: process.env.VUE_APP_STORAGE + this.data.created_by?.profile
+  data() {
+    return  {
+      envStorage: process.env.VUE_APP_STORAGE
     }
   },
   props: ['data']

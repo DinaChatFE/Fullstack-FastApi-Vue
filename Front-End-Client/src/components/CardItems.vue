@@ -12,42 +12,19 @@
         justify-between
         items-center
       ">
-      <ul class="flex flex-wrap -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+      <ul class="flex overflow-x-scroll -mb-px" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
         <li class="mr-2" role="presentation">
-          <button @click="filter('disable', 'all')" class="
-              inline-block
-              text-gray-500
-              hover:text-gray-600 hover:border-gray-300
-              rounded-t-lg
-              py-4
-              px-4
-              text-sm
-              font-medium
-              text-center
-              border-transparent border-b-2
-              dark:text-gray-400 dark:hover:text-gray-300
+          <button @click="filter('disable', 'all')" class="inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300
             " :class="queryParams == 'all' || queryParams == undefined
-                ? 'border-blue-500 text-blue-500'
-                : ''
+              ? 'border-blue-500 text-blue-500'
+              : ''
               " id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile"
             aria-selected="false">
             All
           </button>
         </li>
         <li class="mr-2" role="presentation" v-if="is_auth">
-          <button @click="filterInterested()" class="
-              inline-block
-              text-gray-500
-              hover:text-gray-600 hover:border-gray-300
-              rounded-t-lg
-              py-4
-              px-4
-              text-sm
-              font-medium
-              text-center
-              border-transparent border-b-2
-              dark:text-gray-400 dark:hover:text-gray-300
-              active
+          <button @click="filterInterested()" class="inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active
             " :class="queryParams == 'interested' ? 'border-blue-500 text-blue-500' : ''
               " id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard"
             aria-selected="true">
@@ -55,18 +32,7 @@
           </button>
         </li>
         <li class="mr-2" role="presentation">
-          <button @click="filter('mode', 'Online')" class="
-              inline-block
-              text-gray-500
-              hover:text-gray-600 hover:border-gray-300
-              rounded-t-lg
-              py-4
-              px-4
-              text-sm
-              font-medium
-              text-center
-              border-transparent border-b-2
-              dark:text-gray-400 dark:hover:text-gray-300
+          <button @click="filter('mode', 'Online')" class="inline-block text-gray-500 hover:text-gray-600 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300
             " id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings"
             aria-selected="false" :class="queryParams == 'online' ? 'border-blue-500 text-blue-500' : ''
               ">
@@ -74,18 +40,7 @@
           </button>
         </li>
         <li role="presentation">
-          <button @click="filter('mode', 'Offline')" class="
-              inline-block
-              text-gray-500
-              hover:text-gray-600 hover:border-gray-300
-              rounded-t-lg
-              py-4
-              px-4
-              text-sm
-              font-medium
-              text-center
-              border-transparent border-b-2
-              dark:text-gray-400 dark:hover:text-gray-300
+          <button @click="filter('mode', 'Offline')" class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300
             " :class="queryParams == 'Offline' ? 'border-blue-500 text-blue-500' : ''
               " id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts"
             aria-selected="false">
@@ -93,7 +48,7 @@
           </button>
         </li>
       </ul>
-      <p>Page {{ page }} / {{ event_count }}</p>
+      <p class="shrink-0 whitespace-nowrap">Page {{ page }} / {{ event_count }}</p>
     </div>
     <div class="my-10"></div>
 

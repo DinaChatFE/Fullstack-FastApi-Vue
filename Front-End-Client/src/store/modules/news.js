@@ -22,9 +22,7 @@ export default {
                 state.news = res.data.data
                 state.page = res.data.current_page
                 state.page_count = pageCalc.getLinkCount(res.data.page_count)
-                setTimeout(() => {
-                    state.is_loaded = true
-                }, 1000);
+                state.is_loaded = true
             }, (error) => {
                 console.log(error);
             })

@@ -191,12 +191,11 @@ export default {
   },
   watch: {
     profile: function (val) {
-      this.profile = val;
       this.route_id = route.currentRoute.value.params;
       this.fetchCheckInStatus(this.route_id.id, val.id)
     },
     event_detail: async function (val) {
-      var user = val.register_member.filter(
+      const user = val.register_member.filter(
         (elem) => elem.id === this.profile?.id
       );
       if (!user && !user.check_in) {
@@ -214,15 +213,15 @@ export default {
       }
       this.route_id = route.currentRoute.value.params;
 
-      var path = this.route_id.path;
-      var id = this.route_id.id;
+      const path = this.route_id.path;
+      const id = this.route_id.id;
       if (path == "news") {
         await this.getNewsDetailPage(id);
       } else if (path == "event") {
         await this.getEventDetailPage(id);
       }
 
-      var user = this.event_detail?.register_member?.filter(
+      const user = this.event_detail?.register_member?.filter(
         (elem) => elem.id === this.profile?.id
       );
       if (!user && !user?.check_in) {
@@ -235,9 +234,9 @@ export default {
       this.toggleEventInterested(this.detail.id);
     },
     fetchCheckInStatus(event_id, user_id) {
-      fetch(`http://127.0.0.1:8000/registration/${event_id}/${user_id}`).then(res => res.json()).then(res => {
+      const baseUrl = process.env.VUE_APP_API;
+      fetch(`${baseUrl}registration/${event_id}/${user_id}`).then(res => res.json()).then(res => {
         this.register = res.check_in;
-        console.log(res.check_in);
       })
     },
     registerEvent() {

@@ -3,9 +3,7 @@
     class="
       bg-white
       w-full
-      px-6
-      lg:px-16
-      xl:px-2
+      px-2
       flex
       items-center
       justify-center
@@ -13,7 +11,7 @@
   >
     <div class="w-full relative">
       <form @submit="updateUser" class="mt-6" action="#" method="POST">
-        <div class="grid grid-cols-2 gap-x-8 gap-y-2">
+        <div class="grid md:grid-cols-2 gap-x-8 gap-y-2 py-4">
           <div>
             <label class="block text-gray-700 text-left">First name</label>
             <input
