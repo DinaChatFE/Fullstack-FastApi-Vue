@@ -12,17 +12,19 @@
 
 ## How to install
 
-## in the source files it contians requirements.txt
-if you have vurtual environment installed
-command
+## In the source files it contians requirements.txt
+
+* if you have vurtual environment installed command
 ```bash
     pip3 install -r requirements.txt
 ```
-if not, install virtual environment in python via
+* If not, install virtual environment in python via
+
 ```bash
   python3 -m venv venv
 ```
-go inside enviroment by command
+* Go inside enviroment by command
+
 ```bash
   . venv/bin/activate
  ```
