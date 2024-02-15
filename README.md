@@ -58,7 +58,7 @@ So now we can access those 3 websites, by access these 3 port
 
 ## Installation ( Individual machine )
    * The root directory has three primary folders, the first of which represents the back end. The first folder contains the API that connects to the database, while the second and third folders include the Vue framework, which represents the front end for both admin and clients.
-##### Install postgres
+#### Install postgres
 - On the mac (has brew install), command a few
  ```
 brew doctor
@@ -78,7 +78,7 @@ Run the command:
 createdb `event_news_project # Database name
 ```
 On window you can install [pgadmin4](https://www.pgadmin.org/download/) as your app current
-##### Running web server
+#### Running web server
 - For backend
 - go to Back-End folder or command `cd Back-End`
 - run command: 
@@ -87,12 +87,12 @@ On window you can install [pgadmin4](https://www.pgadmin.org/download/) as your 
  py -m venv env # in window
 # It use to generate folder environment that use only in its sub folder
 ```
-###### Activate venv
+##### Activate venv
 ```
 source env/bin/activate # in mac
 .\env\Scripts\activate $ in window
 ```
-###### Install all package which require in the project
+##### Install all package which require in the project
 - run
 ```
 - pip install -r requirement.txt
@@ -101,7 +101,7 @@ source env/bin/activate # in mac
 ```
  uvicorn main:app --reload
 ```
-###### Serve Fronend (Vue js app)
+##### Serve Fronend (Vue js app)
 - Go to individual folder (Front-End-Admin, Front-End-Client) And install by command
 ```
   npm install
