@@ -29,12 +29,10 @@ export default {
             state.is_loaded = false
             state.next = true
             api.getAllEvent(state.query, payload, state.page, token, (response) => {
-                setTimeout(() => {
-                    if (response.data.page_count < process.env.VUE_APP_COUNT_PAGE) state.next = false
-                    state.event = response.data.data
-                    state.event_count = paginate.getLinkCount(response.data.page_count)
-                    state.is_loaded = true
-                }, 1000);
+                if (response.data.page_count < process.env.VUE_APP_COUNT_PAGE) state.next = false
+                state.event = response.data.data
+                state.event_count = paginate.getLinkCount(response.data.page_count)
+                state.is_loaded = true
             }, (error) => {
                 state.raiseError = error.response.data
             })
@@ -44,15 +42,13 @@ export default {
 
             state.is_loaded = false
             api.getAllEvent(state.query, state.token, state.page, token, (response) => {
-                setTimeout(() => {
-                    state.event_count = paginate.getLinkCount(response.data.page_count)
-                    if (state.page > paginate.getLinkCount(response.data.page_count) - 1) {
-                        state.next = false
-                    } else {
-                        state.page++;
-                    }
-                    response.data.data.forEach(v => state.event.push(v))
-                }, 1000);
+                state.event_count = paginate.getLinkCount(response.data.page_count)
+                if (state.page > paginate.getLinkCount(response.data.page_count) - 1) {
+                    state.next = false
+                } else {
+                    state.page++;
+                }
+                response.data.data.forEach(v => state.event.push(v))
                 state.is_loaded = true
             }, (error) => {
                 console.log(error);
@@ -90,17 +86,14 @@ export default {
             state.is_loaded = false
             let token = localStorage.getItem("APP_VUE_TOKEN")
             api.filterByEventInterested(token, state.page, (res) => {
-                setTimeout(() => {
-                    state.is_loaded = true
-                    state.event = res.data.data
-                    state.event_count = paginate.getLinkCount(res.data.page_count)
-                    if (state.page > paginate.getLinkCount(res.data.page_count) - 1) {
-                        state.next = false
-                    } else {
-                        state.page++;
-                    }
-                }, 1000);
-
+                state.is_loaded = true
+                state.event = res.data.data
+                state.event_count = paginate.getLinkCount(res.data.page_count)
+                if (state.page > paginate.getLinkCount(res.data.page_count) - 1) {
+                    state.next = false
+                } else {
+                    state.page++;
+                }
             }, error => {
                 console.log(error);
             })
