@@ -1,5 +1,7 @@
 # Event and News Project
 
+Access swagger document using http://localhost:8082/docs
+
 ## Project feature
 - login
 - register
