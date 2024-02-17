@@ -99,7 +99,7 @@ source env/bin/activate # in mac
 ##### Install all package which require in the project
 - run
 ```
-- pip install -r requirement.txt
+- pip install -r requirements.txt
 ```
 - Serve web browser
 ```
